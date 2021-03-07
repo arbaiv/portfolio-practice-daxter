@@ -215,6 +215,7 @@ p#about-details{
     font-family: "NoeDisplay";
     font-size: 25px;
     margin-top: 0px;
+    margin-right: 50px;
 }
 div.intro-button{
     margin-top: 60px;
@@ -544,7 +545,7 @@ span.line-break{
 
 
 /* start of tablet site design for heading and footer site */
-@media screen and (max-width: 769px){
+@media screen and (max-width: 800px){
     /* start of logo navber*/
     div#header{
         grid-template-rows: repeat(4, auto);
