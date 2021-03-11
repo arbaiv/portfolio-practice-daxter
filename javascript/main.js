@@ -40,6 +40,15 @@ var responseButton = document.querySelector('div#response-button i');
 
 function responsiveNavbar(){
     mobileNavbar.classList.toggle('afterClick');
+    /*the if statement is for when the toggle closes the navbar will have an animation affect for disapearing*/
+    if(mobileNavbar.getAttribute('class').value = 'beforeClick'){
+        mobileNavbar.style.display = 'block';
+      }
+    /*for burger menu to change to cross*/
+    var menuIcon = document.querySelectorAll('div#response-button span');
+    menuIcon[0].classList.toggle('firstRotate');
+    menuIcon[1].classList.toggle('middlehide');
+    menuIcon[2].classList.toggle('thirdRotate');
 }
 responseButton.addEventListener('click', responsiveNavbar, false);
 

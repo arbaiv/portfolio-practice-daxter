@@ -105,8 +105,55 @@ div.mobile-button{
 }
 div.mobile-button i{
     color: #ff9e54e1;
-    font-size: 60px;
 }
+
+span.hamburger{
+    display: block;
+    width: 35px;
+    height: 5px;
+    margin: 6px 0px;
+    background-color: #ff9e54e1;
+  }
+  span.firstRotate{
+    display: block;
+    width: 40px;
+    height: 5px;
+    background-color: #ff9e54e1;
+    transform: rotate(45deg) translateY(8px);
+    animation: crossrotate 1s both;
+  }
+  span.middlehide{
+    display: none;
+  }
+  span.thirdRotate{
+    display: block;
+    width: 40px;
+    height: 5px;
+    background-color: #ff9e54e1;
+    transform: rotate(-45deg) translateY(-8px);;
+    animation: crossrotatethird 1s both;
+  } 
+  @keyframes crossrotate{
+    from{
+      transform: rotate(0deg) translateY(0px);
+    }
+    to{
+      transform: rotate(45deg) translateY(8px);
+    }
+  }
+  @keyframes crossrotatethird{
+    from{
+      transform: rotate(0deg) translateY(0px);
+    }
+    to{
+      transform: rotate(-45deg) translateY(-8px);
+    }
+  }
+
+
+
+
+
 div#navbar ul{
     margin: 0px;
     padding: 0px;
@@ -576,6 +623,28 @@ span.line-break{
     div.beforeClick{
         display: none;
         height: auto;
+        width: 100%;
+        grid-column: 1 / 13;
+        grid-row: 2 / 3;
+        margin-left: 0px;
+        margin-right: 0px;
+        position: absolute;
+        overflow: hidden;
+        z-index: -2;
+        top: 80px;
+        background-color: #001833e1;
+        animation: navbarclose 2s both;
+    }
+    @keyframes navbarclose {
+      0%{
+        display: block;
+        transform: translateY(0%);
+      }
+      
+      100%{
+        display: block;
+        transform: translateY(-150%);
+      }
     }
     div#navbar ul{
         display: flex;
@@ -598,9 +667,22 @@ span.line-break{
         margin-left: 0px;
         margin-right: 0px;
         position: absolute;
+        overflow: hidden;
+        z-index: -2;
         top: 80px;
         background-color: #001833e1;
+        animation: slidenavbar 2s both;
     }
+    @keyframes slidenavbar {
+    0%{
+      transform: translateY(-100%);
+    }
+    
+    100%{
+      transform: translateY(0px);
+    }
+    }
+    
     div.mobile-button{
         background-color: #001833;
         display: flex;
@@ -621,6 +703,7 @@ span.line-break{
         grid-column: 1 / 13;
         grid-row: 3 / 4;
         margin-right: 0px;
+        z-index: -3;
     }
     img.slide{
         height: 100%;
